@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современное Образование | Платформа Будущего</title>
+    <style>
+        /* Базовые стили и переменные */
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --card-bg: #ffffff;
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: #1e293b;
+            --primary-color: #818cf8;
+            --primary-hover: #6366f1;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .theme-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .theme-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Главный баннер */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Интерактивная панель поиска */
+        .search-container {
+            margin-bottom: 3rem;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* Сетка курсов/трендов */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+  /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">EduFuture</div>
+            <button class="theme-btn" id="themeToggle">Сменить тему</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Образование Новой Эпохи</h1>
+            <p>Гибкость, технологии и практические навыки для успешного будущего в меняющемся мире.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Поиск направления или тренда...">
+            </div>
+        </section>
+
+        <section class="grid" id="coursesGrid">
+            <!-- Карточка 1 -->
+            <div class="card" data-title="искусственный интеллект нейросети">
+                <span class="badge">Тренд 2026</span>
+                <h3>ИИ в обучении</h3>
+                <p>Персонализированные ИИ-ассистенты, которые адаптируют скорость и сложность программы под каждого студента индивидуально.</p>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card" data-title="микрообучение курсы форматы">
+                <span class="badge">Формат</span>
+                <h3>Микрообучение</h3>
+                <p>Получение знаний короткими, сфокусированными сессиями по 10-15 минут. Максимум пользы без выгорания.</p>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="card" data-title="soft skills гибкие навыки softskills">
+                <span class="badge">Навыки</span>
+                <h3>Soft Skills & Критическое мышление</h3>
+                <p>Фокус на умении проверять информацию, работать в кросс-функциональных командах и адаптироваться к изменениям.</p>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="card" data-title="vr виртуальная реальность метаверс">
+                <span class="badge">Технологии</span>
+                <h3>VR/AR Лаборатории</h3>
+                <p>Практические занятия в виртуальной реальности: от симуляции хирургических операций до проектирования ракетных двигателей.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Логика переключения темной/светлой темы
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        });
+
+        // Интерактивный живой поиск по карточкам
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card');
+
+        searchInput.addEventListener('input', (e) => {
+            const value = e.target.value.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-title');
+                const cardText = card.innerText.toLowerCase();
+                
+                // Проверяем совпадение текста внутри карточки или ее тегов
+                if (cardText.includes(value) || searchData.includes(value)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+  
